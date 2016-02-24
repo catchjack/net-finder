@@ -1,0 +1,25 @@
+@import '../scss/base.scss';
+
+.home {
+  //position
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  //display
+  display: flex;
+  width: $app-width;
+  height: $app-height;
+  border-radius: $default-border-radius;
+  background-color: #ffffff;
+  overflow: hidden;
+  .home-left {
+    flex:0 0 $home-left-width;
+    background-color: #f7f8f9;
+  }
+  .home-main {
+    flex:1 1 auto;
+  }
+}

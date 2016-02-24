@@ -1,0 +1,36 @@
+@import '../scss/base.scss';
+
+$top-height: 65px;
+.main-menu {
+  margin-top: $top-height;
+  .main-menu-item {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    .icon {
+      float: left;
+      margin: auto 14px;
+      font-size: 20px;
+    }
+    .title {
+      font-size: 14px;
+      color: #536066;
+    }
+    .num {
+      float: right;
+      margin: 10px 10px;
+      width: 40px;
+      height: 20px;
+      line-height: 20px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      text-align: center;
+      color: $grey-font-color;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    &.selected {
+       background-color: #edf0f2;
+    }
+  }
+}
