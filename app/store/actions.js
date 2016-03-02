@@ -2,11 +2,12 @@ import {
   GET_FILE_LIST, UPDATE_FILE_LIST,
   REQUEST_FILE_LIST, RECEIVE_FILE_LIST_SUCCESS,
   SELECT_FILE_TYPE,
-  REQUEST_DELETE_FILE, RECEIVE_DELETE_FILE_SUCCESS
+  REQUEST_DELETE_FILE, RECEIVE_DELETE_FILE_SUCCESS,
+  REQUEST_UPLOAD_FILE, RECEIVE_UPLOAD_FILE_SUCCESS
 } from './actionTypes.js';
 
 import {
-  GET_FILE_ALL_URL, DELETE_FILES_URL
+  GET_FILE_ALL_URL, DELETE_FILES_URL, UPLOAD_FILES_URL
 } from '../lib/apiUrl'
 
 import { fileTypeHash , fileTypeToDbType} from '../lib/fileType';
@@ -128,5 +129,40 @@ export function deleteFile(ids) {
         dispatch(receiveDeleteFileSuccess(ids));
       }
     })
+  }
+}
+
+//上传文件action
+function requestUploadFile(files) {
+  return {
+    type: REQUEST_UPLOAD_FILE,
+    files
+  }
+}
+
+function receiveUploadFileSuccess(files) {
+  return {
+    type: RECEIVE_UPLOAD_FILE_SUCCESS,
+    files
+  }
+}
+
+export function uploadFile(files) {
+  var MyForm = new FormData();
+  for(let i = 0; i < files.length; i ++) {
+    MyForm.append('userFiles', files[i]);
+  }
+  return dispatch => {
+    dispatch(requestUploadFile(files));
+    fetch(UPLOAD_FILES_URL, {
+      method: 'post',
+      body: MyForm
+    }).then(function(res){
+      if(res.ok) {
+        res.json().then(data => {
+            dispatch(receiveUploadFileSuccess(data.files));
+        })
+      }
+    });
   }
 }

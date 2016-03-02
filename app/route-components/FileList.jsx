@@ -5,6 +5,7 @@ import ScrollArea from 'react-scrollbar';
 
 import {UPLOAD_FILES_URL} from '../lib/apiUrl';
 
+
 const showFileMode = {
   GRAPH:'GRAPH',
   LIST:'LIST'
@@ -38,15 +39,9 @@ export default class FileList extends React.Component {
     return () => {
       let inputFile = document.createElement('input');
       inputFile.setAttribute('type','file');
+      inputFile.setAttribute('multiple', true);
       inputFile.addEventListener('change', function(e){
-        var MyForm = new FormData();
-        MyForm.append('userFile', this.files[0]);
-        fetch(UPLOAD_FILES_URL, {
-          method: 'post',
-          body: MyForm
-        }).then(function(){
-          self.props.onRefresh();
-        })
+        self.props.onUpload(this.files);
       }, false);
       inputFile.click();
     }

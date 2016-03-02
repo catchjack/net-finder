@@ -4,7 +4,7 @@ import FileList from './FileList';
 import {
     fetchFileList, selectFileType,
     fetchFileListIfNeeded, selectFileTypeAndUpdate,
-    deleteFile
+    deleteFile, uploadFile
  } from '../store/actions'
 import { fileTypeHash } from '../lib/fileType';
 
@@ -21,7 +21,7 @@ class AllFile extends React.Component {
   render(){
     const { dispatch, allFile} = this.props;
     return (
-      <FileList files={allFile} onRefresh={() => dispatch(fetchFileList())} onDelete={(ids) => dispatch(deleteFile(ids))} ></FileList>
+      <FileList files={allFile} onRefresh={() => dispatch(fetchFileList())} onDelete={(ids) => dispatch(deleteFile(ids))}  onUpload={(files) => dispatch(uploadFile(files))}></FileList>
     )
   }
 }
