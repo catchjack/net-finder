@@ -2,14 +2,15 @@
   "name": "net-finder",
   "version": "0.0.0",
   "description": "",
-  "main": "app/app.js",
+  "main": "electron_main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
     "hot-dev-server": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
     "build": "webpack --config webpack-production.config.js --progress --profile --colors",
     "start-dev": "node lib/server-development",
-    "start": "node lib/server"
+    "start": "node lib/server",
+    "electron": "./node_modules/.bin/electron electron_main.js"
   },
   "keywords": [
     "webpack",
@@ -60,6 +61,7 @@
   "devDependencies": {
     "babel-eslint": "^3.0.1",
     "eslint": "^0.22.0",
-    "eslint-plugin-react": "^2.2.0"
+    "eslint-plugin-react": "^2.2.0",
+    "electron-prebuilt": "^0.36.8"
   }
 }

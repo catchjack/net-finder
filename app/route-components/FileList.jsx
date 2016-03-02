@@ -3,6 +3,8 @@ import styles from './FileList.scss';
 import classNames from 'classnames';
 import ScrollArea from 'react-scrollbar';
 
+import {UPLOAD_FILES_URL} from '../lib/apiUrl';
+
 const showFileMode = {
   GRAPH:'GRAPH',
   LIST:'LIST'
@@ -39,7 +41,7 @@ export default class FileList extends React.Component {
       inputFile.addEventListener('change', function(e){
         var MyForm = new FormData();
         MyForm.append('userFile', this.files[0]);
-        fetch("http://localhost:3000/upload", {
+        fetch(UPLOAD_FILES_URL, {
           method: 'post',
           body: MyForm
         }).then(function(){
