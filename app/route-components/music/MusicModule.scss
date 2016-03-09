@@ -1,0 +1,83 @@
+@import '../../scss/base.scss';
+
+.music-module {
+  .header {
+    margin: 25px 25px 0;
+    -webkit-app-region: drag;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    color: $grey-font-color;
+    .left-menu {
+      font-size: 14px;
+      float: left;
+      li {
+        float: left;
+        padding:0 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        &.selected {
+          color: #ffffff;
+          background-color: $grey-font-color;
+        }
+      }
+    }
+    .right-menu {
+      float: right;
+      li {
+        font-size: 20px;
+        float: right;
+        padding:0 15px;
+        border-left: 1px solid #eaeeef;
+        cursor: pointer;
+        &:first-child {
+          padding:0 0 0 15px;
+        }
+        &:last-child {
+          border-left: 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    .music-info {
+      text-align: center;
+      .cover {
+        margin: 20px;
+        height: 300px;
+      }
+    }
+    .music-control {
+      margin-top: 20px;
+      text-align: center;
+      line-height: 60px;
+      &.playing {
+        .play {
+          display: none;
+        }
+        .pause {
+          display: inline-block;
+        }
+      }
+      .pause, .play {
+        cursor: pointer;
+        font-size: 50px;
+      }
+
+      .play {
+        display: inline-block;
+      }
+      .pause {
+        display: none;
+      }
+
+      .next-music, .prev-music{
+        cursor: pointer;
+        font-size: 30px;
+        margin: 0px 20px;
+      }
+    }
+  }
+
+}

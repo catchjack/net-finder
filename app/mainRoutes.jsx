@@ -6,6 +6,7 @@ import Menus from './route-components/Menus';
 import AllFile from './route-components/AllFile';
 import store from './mainStores';
 import Picture from './route-components/picture/PictureModule';
+import Music from './route-components/music/MusicModule';
 
 // // 监听 state 更新时，打印日志
 // // 注意 subscribe() 返回一个函数用来注销监听器
@@ -27,7 +28,7 @@ module.exports = (
         <IndexRoute components={{sidebar: Menus, content: AllFile}}/>
         <Route path="all" components={{sidebar: Menus, content: AllFile}}></Route>
         <Route path="picture" components={{sidebar: Menus, content: Picture}}></Route>
-        <Route path="music" components={{sidebar: Menus, content: null}}></Route>
+        <Route path="music" components={{sidebar: Menus, content: Music}}></Route>
         <Route path="other" components={{sidebar: Menus, content: null}}></Route>
       </Route>
     </Router>
