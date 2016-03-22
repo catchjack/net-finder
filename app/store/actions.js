@@ -10,7 +10,6 @@ import {
   GET_FILE_ALL_URL, DELETE_FILES_URL, UPLOAD_FILES_URL
 } from '../lib/apiUrl'
 
-import { fileTypeHash , fileTypeToDbType} from '../lib/fileType';
 
 export function getFileList(){
   return {
@@ -166,3 +165,5 @@ export function uploadFile(files) {
     });
   }
 }
+
+//获取音乐接口

@@ -6,8 +6,6 @@ import {
   REQUEST_UPLOAD_FILE, RECEIVE_UPLOAD_FILE_SUCCESS
 } from './actionTypes';
 
-import { music } from '../reducers/musicReducer';
-
 function allFile(state = {
   isFetching: false,
   lastUpdated: Date.now(),
@@ -48,8 +46,7 @@ function allFile(state = {
 }
 
 const rootReducer = combineReducers({
-  allFile,
-  music
+  allFile
 })
 
 
