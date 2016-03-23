@@ -9,15 +9,15 @@ class App extends React.Component{
   }
 
   render() {
-    const { sidebar, content} = this.props;
+    const { sidebar, content, all} = this.props;
+
+    //let allDiv = all ? (<div className="home-main"> {all} </div>) : null;
+    let sidebarDiv = sidebar ? (<div className="home-left">{sidebar}</div>) : null;
+    let contentDiv = content ? (<div className="home-main">{content}</div>) : null;
     return (
       <div className="home">
-        <div className="home-left">
-          { sidebar }
-        </div>
-        <div className="home-main">
-          { content }
-        </div>
+        {sidebarDiv}
+        {contentDiv}
       </div>
     )
   }

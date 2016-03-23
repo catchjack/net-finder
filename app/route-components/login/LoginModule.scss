@@ -1,0 +1,43 @@
+
+
+.login-module {
+  overflow: hidden;
+  width: 800px;
+  height: 600px;
+  background-image: url('http://localhost:3000/files/wallhaven-284587.jpg');
+  .verify-wrap {
+    width: 200px;
+    margin: 200px auto 0px;
+    .account-ipt,.password-ipt {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.19);
+      height: 30px;
+      line-height: 30px;
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+    .signin-btn {
+      border: 0;
+      padding: 0;
+      display: block;
+      font-size: 14px;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background-color: rgb(87, 173, 149);
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(87, 173, 149, 0.4);
+      }
+    }
+    .account-wrap, .password-wrap, .signin-wrap {
+      margin: 20px auto;
+
+    }
+  }
+}
