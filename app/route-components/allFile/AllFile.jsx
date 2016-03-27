@@ -2,11 +2,20 @@ import React,{ Component, PropTypes }from 'react';
 import { connect } from 'react-redux';
 import FileList from './FileList';
 import {
-    fetchFileList, selectFileType,
-    fetchFileListIfNeeded, selectFileTypeAndUpdate,
-    deleteFile, uploadFile
- } from '../store/actions'
-import { fileTypeHash } from '../lib/fileType';
+  fetchFileList, selectFileType,
+  fetchFileListIfNeeded, selectFileTypeAndUpdate
+ } from '../../actions/getFile';
+
+import {
+  deleteFile
+} from '../../actions/deleteFile';
+
+import {
+  uploadFile
+} from '../../actions/deleteFile';
+
+
+import { fileTypeHash } from '../../lib/fileType';
 
 class AllFile extends React.Component {
   constructor(props) {

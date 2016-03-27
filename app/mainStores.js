@@ -1,7 +1,7 @@
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import { createStore , applyMiddleware} from 'redux';
-import netFinderApp from './store/reducers';
+import netFinderApp from './reducers/mainReducer';
 
 const loggerMiddleware = createLogger();
 

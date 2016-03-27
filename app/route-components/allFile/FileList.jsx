@@ -3,9 +3,6 @@ import styles from './FileList.scss';
 import classNames from 'classnames';
 import ScrollArea from 'react-scrollbar';
 
-import {UPLOAD_FILES_URL} from '../lib/apiUrl';
-
-
 const showFileMode = {
   GRAPH:'GRAPH',
   LIST:'LIST'

@@ -1,14 +1,18 @@
 import { combineReducers } from 'redux';
 import {
   GET_FILE_LIST, REQUEST_FILE_LIST,
-  RECEIVE_FILE_LIST_SUCCESS, SELECT_FILE_TYPE,
-  REQUEST_DELETE_FILE, RECEIVE_DELETE_FILE_SUCCESS,
+  RECEIVE_FILE_LIST_SUCCESS, SELECT_FILE_TYPE
+} from '../actions/getFile';
+
+import {
+  REQUEST_DELETE_FILE, RECEIVE_DELETE_FILE_SUCCESS
+} from '../actions/deleteFile';
+
+import {
   REQUEST_UPLOAD_FILE, RECEIVE_UPLOAD_FILE_SUCCESS
-} from './actionTypes';
+} from '../actions/uploadFile';
 
-import { music } from '../reducers/musicReducer';
-
-function allFile(state = {
+export const allFile = function(state = {
   isFetching: false,
   lastUpdated: Date.now(),
   isDeleteing: false,
@@ -46,11 +50,3 @@ function allFile(state = {
       return state;
   }
 }
-
-const rootReducer = combineReducers({
-  allFile,
-  music
-})
-
-
-export default rootReducer;
