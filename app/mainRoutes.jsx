@@ -22,8 +22,13 @@ import Login from './route-components/login/LoginModule';
 if(!Object.assign)
   Object.assign = React.__spread; // eslint-disable-line no-underscore-dangle
 
+
+
 function loginAuth(nextState, replaceState, callback) {
-  replaceState(null, '/all');
+  let storeState = store.getState();
+  if(storeState.login.isLogin) {
+    replaceState(null, '/all');
+  }
   callback();
 }
 
