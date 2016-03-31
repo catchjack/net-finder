@@ -12,7 +12,7 @@ import {
 
 import {
   uploadFile
-} from '../../actions/deleteFile';
+} from '../../actions/uploadFile';
 
 
 import { fileTypeHash } from '../../lib/fileType';

@@ -83,12 +83,23 @@ export default class FileList extends React.Component {
   }
 
   render(){
-    let genClassName = (id) => {
-      return classNames({'file-wrap' : true, 'selected': this.state.selectedFileIds.indexOf(id) >= 0});
+    let genClassName = (id, type) => {
+      return classNames({
+        'file-wrap' : true,
+        'selected': this.state.selectedFileIds.indexOf(id) >= 0,
+        'music': type == 'audio/mp3'
+      });
     }
     let fileList = this.props.files.items.map((file) => {
+
+
       return (
-        <li className={genClassName(file._id)} key={file._id} onClick={this.selectFile(file._id, file.downloadUri)}><div className="mask"></div><img src={file.coverUri}/></li>
+        <li className={genClassName(file._id , file.type)}
+          key={file._id}
+          onClick={this.selectFile(file._id, file.downloadUri)}>
+          <div className="mask"><i className="iconfont">&#xe618;</i></div>
+          <img src={file.coverUri}/>
+        </li>
       )
     })
 
