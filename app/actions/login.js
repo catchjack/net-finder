@@ -11,6 +11,15 @@ const receiveLoginFail = createAction(RECEIVE_LOGIN_FAIL);
 export function postLogin(data) {
   return (dispatch) => {
     dispatch(requestLogin(data));
-    dispatch(receiveLoginSuccess({ name: 'wenjie'}));
+    if(data.account == '201231000907' && data.password == 'wenjie') {
+      dispatch(receiveLoginSuccess(data));
+      return Promise.resolve(data);
+    } else {
+      dispatch(receiveLoginFail(data));
+      return Promise.reject({
+        ...data,
+        errorMessage:'账号密码错误',
+      });
+    }
   }
 }

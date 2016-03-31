@@ -4,37 +4,24 @@
   overflow: hidden;
   width: 800px;
   height: 600px;
-  //background-image: url('http://localhost:3000/files/wallhaven-284587.jpg');
+  background-image: url('https://drscdn.500px.org/photo/1443137/m%3D2048/536442f8345b73a030b3c9812c3499ad');
+  background-size: cover;
   .verify-wrap {
-    width: 200px;
-    margin: 200px auto 0px;
+    padding: 20px;
+    width: 240px;
+    margin: 180px auto 0px;
+    background-color: white;
     .account-ipt,.password-ipt {
       display: block;
-      width: 100% !important;
       background: transparent;
       height: 30px;
       line-height: 30px;
       color: rgb(255, 255, 255);
       text-align: center;
     }
-    .signin-btn {
-      border: 0;
-      padding: 0;
-      display: block;
-      font-size: 14px;
-      width: 100%;
-      height: 30px;
-      line-height: 30px;
-      color: white;
-      text-align: center;
-      cursor: pointer;
-      &:hover {
-        background-color: rgba(87, 173, 149, 0.4);
-      }
+    .password-wrap, .signin-wrap {
+      margin-top: 20px;
     }
-    .account-wrap, .password-wrap, .signin-wrap {
-      margin: 20px auto;
 
-    }
   }
 }

@@ -13,13 +13,13 @@ export default class Menus extends React.Component{
         type: 'all',
         name: '所有文件',
         route: 'all',
-        num: '10'
+        num: 0
       },{
         icon: '&#xe601;',
         type: 'picture',
         name: '图片',
         route: 'picture',
-        num: '10'
+        num: 0
       },{
         icon: '&#xe602;',
         type: 'music',
@@ -51,6 +51,7 @@ export default class Menus extends React.Component{
   }
 
   render(){
+
     let Meuns = this.state.menusList.map(menu => {
       let SelectedClass = this.state.selectedMenuType == menu.type? ' selected' : '';
       return (
@@ -69,6 +70,7 @@ export default class Menus extends React.Component{
       )
     })
 
+  
     return (
         <ul className="main-menu">
           {Meuns}

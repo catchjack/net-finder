@@ -143,8 +143,7 @@ class MusicModule extends Component {
       <div className="music-module">
         <div className="header">
           <ul className="left-menu">
-             <li className={isGraph} onClick={this.changeShowFileMode(showFileMode.GRAPH)} >时光轴</li>
-             <li className={isList} onClick={this.changeShowFileMode(showFileMode.LIST)}>最近上传</li>
+            
           </ul>
           <ul className="right-menu">
             <li><i className="iconfont icon">&#xe606;</i></li>
