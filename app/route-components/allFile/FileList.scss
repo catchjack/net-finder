@@ -52,48 +52,142 @@
       }
       overflow:hidden;
       margin: -5px;
-      .file-wrap {
-        float: left;
-        width: $file-width;
-        height: $file-width;
-        margin: 5px;
-        position: relative;
-        cursor: pointer;
-        .mask {
-          overflow: hidden;
-          position: absolute;
+      &.detail-list {
+        .file-wrap {
+          position: relative;
+          cursor: pointer;
+          float: left;
+          height: 30px;
           width: 100%;
-          height: 0%;
-          transition: all 0.1s;
-          line-height: $file-width;
-          text-align: center;
-          i {
-            color: white;
-            font-size: 50px;
+          margin-top: 5px;
+          line-height: 30px;
+          font-size: 10px;
+          &.music {
+            .img-wrap {
+              background-image: url("http://localhost:8080/img/clipping_music.png");
+              background-size: cover;
+              img {
+                display: none;
+              }
+            }
           }
-        }
-        &.selected {
+          .img-wrap {
+            float: left;
+            height: 20px;
+            width: 20px;
+            margin: 5px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           .mask {
-            height: 100%;
-            background-color: rgba(0, 0, 0, .5);
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 0%;
+            transition: all 0.1s;
+            line-height: 30px;
+            text-align: center;
+            i {
+              color: white;
+              font-size: 16px;
+            }
+          }
+          .name {
+            float: left;
+            width: 35%;
+            overflow: hidden; /*自动隐藏文字*/
+            text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+            white-space: nowrap;/*强制不换行*/
+          }
+          .date {
+            float: left;
+            width: 25%;
+            overflow: hidden; /*自动隐藏文字*/
+            text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+            white-space: nowrap;/*强制不换行*/
+          }
+          .size {
+            float: left;
+            width: 10%;
+            overflow: hidden; /*自动隐藏文字*/
+            text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+            white-space: nowrap;/*强制不换行*/
+          }
+          .type {
+            float: left;
+            width: 20%;
+            overflow: hidden; /*自动隐藏文字*/
+            text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+            white-space: nowrap;/*强制不换行*/
+          }
+          &.selected {
+            .mask {
+              height: 100%;
+              background-color: rgba(0, 0, 0, .5);
+            }
           }
         }
-        &.music {
-          background-image: url("http://localhost:8080/img/clipping_music.png");
-          background-size: cover;
-          img {
+      }
+      &.graph-list {
+        .file-wrap {
+          float: left;
+          width: $file-width;
+          height: $file-width;
+          margin: 5px;
+          position: relative;
+          cursor: pointer;
+          .mask {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 0%;
+            transition: all 0.1s;
+            line-height: $file-width;
+            text-align: center;
+            i {
+              color: white;
+              font-size: 50px;
+            }
+          }
+          &.selected {
+            .mask {
+              height: 100%;
+              background-color: rgba(0, 0, 0, .5);
+            }
+          }
+
+          &:hover {
+            .mask {
+              height: 100%;
+              background-color: rgba(0, 0, 0, .5);
+            }
+          }
+
+          .img-wrap {
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &.music {
+            .img-wrap {
+              background-image: url("http://localhost:8080/img/clipping_music.png");
+              background-size: cover;
+              img {
+                display: none;
+              }
+            }
+          }
+
+          .name, .type, .size, .date {
             display: none;
           }
-        }
-        &:hover {
-          .mask {
-            height: 100%;
-            background-color: rgba(0, 0, 0, .5);
-          }
-        }
-        img {
-          width: 100%;
-          height: 100%;
         }
       }
     }

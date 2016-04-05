@@ -91,14 +91,16 @@ export default class FileList extends React.Component {
       });
     }
     let fileList = this.props.files.items.map((file) => {
-
-
       return (
         <li className={genClassName(file._id , file.type)}
           key={file._id}
           onClick={this.selectFile(file._id, file.downloadUri)}>
           <div className="mask"><i className="iconfont">&#xe618;</i></div>
-          <img src={file.coverUri}/>
+          <div className="img-wrap"><img src={file.coverUri}/></div>
+          <div className="name">{file.name}</div>
+          <div className="date">{file.addDate}</div>
+          <div className="size">2KB</div>
+          <div className="type">{file.type}</div>
         </li>
       )
     })
@@ -119,7 +121,12 @@ export default class FileList extends React.Component {
           </ul>
         </div>
         <ScrollArea className="content" speed={0.8} horizontal={false} >
-          <ul className="file-list">
+          <ul className={classNames({
+            'file-list' : true,
+            'detail-list': this.state.showFileMode === showFileMode.LIST,
+            'graph-list': this.state.showFileMode === showFileMode.GRAPH
+          })}
+          >
             {fileList}
           </ul>
         </ScrollArea>
