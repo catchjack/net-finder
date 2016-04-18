@@ -143,12 +143,14 @@ class MusicModule extends Component {
       <div className="music-module">
         <div className="header">
           <ul className="left-menu">
-            
+
           </ul>
           <ul className="right-menu">
+            {/*
             <li><i className="iconfont icon">&#xe606;</i></li>
             <li ><i className="iconfont icon">&#xe605;</i></li>
             <li><i className="iconfont icon">&#xe607;</i></li>
+            */}
           </ul>
         </div>
 

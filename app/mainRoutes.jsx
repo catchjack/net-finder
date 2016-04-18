@@ -6,8 +6,11 @@ import Menus from './route-components/menus/Menus';
 import AllFile from './route-components/allFile/AllFile';
 import store from './mainStores';
 import Picture from './route-components/picture/PictureModule';
+import PictureNear from './route-components/picture/PictureNear';
+import PictureTimeline from './route-components/picture/PictureTimeline';
 import Music from './route-components/music/MusicModule';
 import Login from './route-components/login/LoginModule';
+import OtherFile from './route-components/otherFile/OtherFile';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -55,9 +58,13 @@ module.exports = (
         <IndexRoute components={{content: Login}}/>
         <Route path="login" onEnter={loginAuth} components={{content: Login}}/>
         <Route path="all" onEnter={loginNeedAuth} components={{sidebar: Menus, content: AllFile}}></Route>
-        <Route path="picture" onEnter={loginNeedAuth} components={{sidebar: Menus, content: Picture}}></Route>
+        <Route path="picture" onEnter={loginNeedAuth} components={{sidebar: Menus, content: Picture}}>
+            <IndexRoute components={PictureTimeline}/>
+            <Route path="near" onEnter={loginNeedAuth} components={PictureNear}/>
+            <Route path="timeline" onEnter={loginNeedAuth} components={PictureTimeline}/>
+        </Route>
         <Route path="music" onEnter={loginNeedAuth} components={{sidebar: Menus, content: Music}}></Route>
-        <Route path="other" onEnter={loginNeedAuth} components={{sidebar: Menus, content: null}}></Route>
+        <Route path="other" onEnter={loginNeedAuth} components={{sidebar: Menus, content: OtherFile}}></Route>
       </Route>
     </Router>
   </Provider>

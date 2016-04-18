@@ -1,5 +1,5 @@
 import React,{ Component, PropTypes }from 'react';
-import styles from './FileList.scss';
+import styles from './OtherFileList.scss';
 import classNames from 'classnames';
 import ScrollArea from 'react-scrollbar';
 
@@ -112,8 +112,9 @@ export default class FileList extends React.Component {
       <div className="file-list-wrap">
         <div className="header">
           <ul className="left-menu">
-            <li className={isGraph} onClick={this.changeShowFileMode(showFileMode.GRAPH)} >图形</li>
+            {/*<li className={isGraph} onClick={this.changeShowFileMode(showFileMode.GRAPH)} >图形</li>
             <li className={isList} onClick={this.changeShowFileMode(showFileMode.LIST)}>列表</li>
+            */}
           </ul>
           <ul className="right-menu">
             <li onClick={this.deleteFile()}><i className="iconfont icon">&#xe606;</i></li>
@@ -124,8 +125,8 @@ export default class FileList extends React.Component {
         <ScrollArea className="content" speed={0.8} horizontal={false} >
           <ul className={classNames({
             'file-list' : true,
-            'detail-list': this.state.showFileMode === showFileMode.LIST,
-            'graph-list': this.state.showFileMode === showFileMode.GRAPH
+            'detail-list': true,
+            'graph-list': false
           })}
           >
             {fileList}

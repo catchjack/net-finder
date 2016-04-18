@@ -1,10 +1,9 @@
 import React,{ Component, PropTypes }from 'react';
 import { connect } from 'react-redux';
-import FileList from './FileList';
+import OtherFileList from './OtherFileList';
 import {
-  fetchFileList, selectFileType,
-  fetchFileListIfNeeded, selectFileTypeAndUpdate
- } from '../../actions/getFile';
+  fetchOtherFileList
+} from '../../actions/getOtherFile';
 
 import {
   deleteFile
@@ -24,14 +23,14 @@ class AllFile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchFileListIfNeeded());
+    this.props.dispatch(fetchOtherFileList());
   }
 
   render(){
-    const { dispatch, allFile} = this.props;
+    const { dispatch, otherFile} = this.props;
     return (
-      <FileList
-        files={allFile}
+      <OtherFileList
+        files={otherFile}
         onRefresh={() => dispatch(fetchFileList())}
         onDelete={(ids) => dispatch(deleteFile(ids))}
         onUpload={(files) => dispatch(uploadFile(files))}
