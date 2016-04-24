@@ -69,6 +69,10 @@
           width: $file-width;
           height: $file-width;
           margin: 5px;
+          img {
+            width: $file-width;
+            height: $file-width;
+          }
         }
       }
     }

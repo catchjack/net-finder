@@ -156,7 +156,7 @@ class MusicModule extends Component {
 
         <ScrollArea className="content" speed={0.8} horizontal={false} >
           <div className="music-info">
-            <img className="cover" src="http://localhost:3000/files/1.jpg"/>
+            <img className="cover" src="http://localhost:3000/files/dc54564e9258d109b01c3e29d158ccbf6d814da9_1461214785000.jpg"/>
             <p className="name">
               {this.state.musicList[this.state.musicIndex]&& this.state.musicList[this.state.musicIndex].name || ''}
             </p>
